@@ -20,7 +20,7 @@ class WsdlUrlExtractor {
   public enum WsdlurlExtraction {
     OK,
     ENTRY_NOT_FOUND,
-    COULD_NOT_FIND_WSDL_URL_IN_ERNTRY
+    COULD_NOT_FIND_WSDL_URL_IN_ENTRY
   }
 
   private String endPointAdress;
@@ -61,13 +61,13 @@ class WsdlUrlExtractor {
   private WsdlurlExtraction extractFromNode(Node node) {
     WsdlurlExtraction result ;
     if (node == null) {
-      result = WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ERNTRY;
+      result = WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ENTRY;
     } else {
       String tmp = node.getStringValue();
 
       String[] split = tmp.split("\\{TP_BASE_URI}/");
       if (split.length != 2) {
-        result = WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ERNTRY;
+        result = WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ENTRY;
         endPointAdress = null;
         folderName = null;
       }else{

@@ -64,7 +64,7 @@ class FileGenerationData {
   }
 
   void addProblemWithWsdlurl(WsdlurlExtraction wsdlurlExtraction, File file) {
-    if (wsdlurlExtraction == WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ERNTRY) {
+    if (wsdlurlExtraction == WsdlurlExtraction.COULD_NOT_FIND_WSDL_URL_IN_ENTRY) {
       addProblems(file, "Unable to extractTjansteKontraktAndPath WsdlUrl");
       addProblems(
           file,
